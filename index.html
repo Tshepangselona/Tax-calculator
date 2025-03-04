@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced South African Tax Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <h1 class="text-center">SA Tax Calculator</h1>
+
+        <!-- Basic form elements visible at the top -->
+        <div class="form-group">
+          <label for="taxType">Select Tax Type:</label>
+          <select id="taxType" class="input-field">
+            <option value="personal">Personal Income Tax</option>
+            <option value="corporate">Corporate Tax</option>
+            <option value="vat">VAT Calculator</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="income" id="incomeLabel">Enter Annual Income:</label>
+          <input
+            type="number"
+            id="income"
+            placeholder="Enter amount"
+            class="input-field"
+          />
+        </div>
+
+        <!-- Personal income tax specific fields -->
+        <div id="personalFields">
+          <div class="form-group">
+            <label for="age">Your Age:</label>
+            <input
+              type="number"
+              id="age"
+              placeholder="Enter age"
+              class="input-field"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="retirementContribution"
+              >Retirement Contributions:</label
+            >
+            <input
+              type="number"
+              id="retirementContribution"
+              placeholder="RA, pension funds"
+              class="input-field"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="medicalExpenses">Medical Expenses:</label>
+            <input
+              type="number"
+              id="medicalExpenses"
+              placeholder="Medical expenses"
+              class="input-field"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="donations">Charitable Donations:</label>
+            <input
+              type="number"
+              id="donations"
+              placeholder="SARS approved"
+              class="input-field"
+            />
+          </div>
+        </div>
+
+        <!-- Corporate tax specific fields -->
+        <div id="corporateFields">
+          <div class="info-box">
+            <p>Corporate tax rate: 27%</p>
+          </div>
+        </div>
+
+        <!-- VAT calculator fields -->
+        <div id="vatFields">
+          <div class="info-box">
+            <p>Standard VAT rate: 15%</p>
+          </div>
+        </div>
+
+        <!-- Capital Gains -->
+        <div id="capitalGainsField" class="form-group">
+          <label for="capitalGains">Capital Gains:</label>
+          <input
+            type="number"
+            id="capitalGains"
+            placeholder="Capital gains amount"
+            class="input-field"
+          />
+        </div>
+
+        <!-- Action buttons -->
+        <button class="btn-calculate" onclick="calculateTax()">
+          Calculate
+        </button>
+        <button class="btn-report" onclick="generatePrintableReport()">
+          Generate Report
+        </button>
+
+        <!-- Results section -->
+        <div id="result" class="result"></div>
+        <div id="taxChart" class="tax-chart"></div>
+        <div id="breakdown" class="breakdown"></div>
+
+        <div class="disclaimer">
+          <p>
+            For information purposes only. Tax rates based on 2023/2024 tax
+            year.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
